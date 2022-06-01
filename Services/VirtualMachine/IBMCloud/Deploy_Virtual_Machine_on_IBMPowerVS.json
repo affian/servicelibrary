@@ -1,20 +1,20 @@
 {
     "service": {
-      "version": "2.0.0.0",
+      "version": "2.1.0.0",
       "specVersion": "v3",
       "catalog_metadata": {
-        "name": "Virtual Machine on IBM Cloud",
-        "description": "Deploys Virtual Machine on IBM Cloud",
+        "name": "LPAR on IBM PowerVS",
+        "description": "Deploys LPAR on IBM PowerVS",
         "image": "serviceicon_1.svg",
         "category": "Virtual Machine",
         "bullets": [
           {
             "title": "Github link",
-            "description": "https://github.com/IBM-CAMHub-Open/servicelibrary/tree/5.0.0/Services/VirtualMachine/IBMCloud"
+            "description": "https://github.com/affian/servicelibrary/tree/5.0.0/Services/VirtualMachine/IBMCloud"
           }
         ],
-        "providerDisplayName": "IBM",
-        "longDescription": "Deploys Virtual Machine on IBM Cloud",
+        "providerDisplayName": "custom provider",
+        "longDescription": "Deploys LPAR on IBM PowerVS",
         "documentationUrl": "",
         "supportUrl": "",
         "bindable": false,
@@ -30,7 +30,7 @@
           "hidden": false,
           "required": true,
           "secured": false,
-          "description": "Unique identifer added to the provisioned VMs.",
+          "description": "Unique identifer added to the provisioned LPARs.",
           "isSystemTag": true,
           "customtype": "string",
           "permission": "Read-Write",
@@ -149,7 +149,7 @@
               "view": "create new",
               "editable": true,
               "default": "",
-              "provider": "IBM",
+              "provider": "custom provider",
               "passbyname": false,
               "dynamicDetails": {},
               "isDynamic": false
@@ -180,7 +180,7 @@
               "description": "Hostname of the virtual instance (small flavor) to be deployed",
               "view": "create new",
               "editable": true,
-              "default": "debian-small"
+              "default": "Linux"
             },
             {
               "name": "domain",
@@ -214,7 +214,7 @@
                   "template_data_objects": {},
                   "template_params": {
                     "public_ssh_key": "${input_parameters.public_ssh_key}",
-                    "datacenter": "dal09",
+                    "datacenter": "lon06",
                     "hostname": "${input_parameters.hostname}",
                     "domain": "${input_parameters.domain}"
                   },
